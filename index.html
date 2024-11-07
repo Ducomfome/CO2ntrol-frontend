@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Co²ntrol</title>
+  </head>
+  <body>
+    <header id="top">
+      <nav>
+        <h1>Co²ntrol</h1>
+        <div class="search-container">
+          <input
+            type="text"
+            name="search-input"
+            id="search-input"
+            placeholder="Pesquisar por bairro"
+          />
+          <button aria-label="Pesquisar">
+            <img src="assets/search.svg" alt="Pesquisar" />
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div id="top-button">
+      <a href="#top">
+        <button>
+          <img src="assets/arrow-up.svg" alt="Seta para cima" />
+        </button>
+      </a>
+    </div>
+    <div class="filtros-container">
+      <button class="is-active">Todos</button>
+      <button>Melhores bairros</button>
+      <button>Piores bairros</button>
+    </div>
+    <main id="bairros-container">
+      <div id="loading">
+        <img src="assets/progress.svg" alt="Carregando..." />
+      </div>
+    </main>
+    <script type="module" src="aqi.js"></script>
+    <script type="module" src="buttonsFilter.js"></script>
+    <script type="module" src="handlescroll.js"></script>
+  </body>
+</html>
