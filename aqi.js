@@ -8,7 +8,7 @@ async function fetchAirQualityData() {
     // Se os dados já foram carregados, não faça o fetch novamente
     if (bairrosData.length > 0) return bairrosData;
 
-    const response = await fetch("https://co2ntrol-api.onrender.com");
+    const response = await fetch("https://co2ntrol-api-eory.onrender.com/");
     const data = await response.json();
     bairrosData = data.bairros; // Armazena os dados em cache
 
@@ -54,10 +54,10 @@ function displayData(bairros, order = "none") {
     let msgQualidadeAr = "";
     let recomendacoes = "";
 
-    let qualidadeArOtimo = aqi >= 0 && aqi <= 40;
-    let qualidadeArRazoavel = aqi >= 41 && aqi <= 80;
-    let qualidadeArRuim = aqi >= 81 && aqi <= 120;
-    let qualidadeArTerrivel = aqi >= 121 && aqi <= 200;
+    let qualidadeArOtimo = aqi == 1 || aqi == 2;
+    let qualidadeArRazoavel = aqi == 3;
+    let qualidadeArRuim = aqi == 4;
+    let qualidadeArTerrivel = aqi == 5;
 
     if (qualidadeArOtimo) {
       qualidadeClasse = "bairro-container-otimo";
